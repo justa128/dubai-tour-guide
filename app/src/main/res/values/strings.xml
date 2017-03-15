@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Lets Go Dubai</string>
+
+    <!-- Category name for useful info [CHAR LIMIT=20] -->
+    <string name="category_usefulinfo">General</string>
+
+    <!-- Category name for places [CHAR LIMIT=20] -->
+    <string name="category_places">Places</string>
+
+    <!-- Category name for food [CHAR LIMIT=20] -->
+    <string name="category_food">Food</string>
+
+    <!-- Category name for nature [CHAR LIMIT=20] -->
+    <string name="category_nature">Nature</string>
+
+    <!-- Category name for weather -->
+    <string name="wheather">Wheather</string>
+
+    <!-- Category name for when to come -->
+    <string name="when_come">When to come</string>
+
+    <!-- Category name for dress code -->
+    <string name="dress_code">Dress Code</string>
+
+    <!-- Category name for ramadan -->
+    <string name="ramadan">Ramadan</string>
+
+    <!-- Category name for alcohol -->
+    <string name="alcohol">Alcohol</string>
+
+    <!-- Category name for prices -->
+    <string name="prices">Prices</string>
+</resources>
