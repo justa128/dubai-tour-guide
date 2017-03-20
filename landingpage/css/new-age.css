@@ -1,8 +1,3 @@
-/*!
- * Start Bootstrap - New Age v3.3.7 (http://startbootstrap.com/template-overviews/new-age)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
 .heading-font {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
@@ -480,5 +475,8 @@ body {
  @media (max-width: 767px) {
   .email-field {
     text-align: center;
+   }
+   .navbar-blog {
+   	color: #222222 !important;
    }
  }
