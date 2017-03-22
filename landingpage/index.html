@@ -90,31 +90,10 @@
 <script type="text/javascript">var submitted=false;</script>
 <script type="text/javascript">
 $('#gform').on('submit', function(e) {
-  $('#gform').validate(
-  {
-    rules: {
-        email: {
-            required: true
-        }
-    },
-    messages: {
-        email: {
-            required: "Please enter your email."
-        }
-    },
-    errorPlacement: function (error, element) {
-        error.appendTo(element.parent().prev());
-    },
-    submitHandler: function (form) {
-        $(':mobile-pagecontainer').pagecontainer('change', '#success', {
-            reload: false
-        });
-        return false;
-    }
-}
-  );
+ if(email != null) {
   $('#gform *').fadeOut(0);
   $('#gform').prepend('Thank you! I will notify you when the app is launched. Meanwhile kindly visit my <a href="https://medium.com/@justynagolawska/dubai-tour-guide-app-initial-concept-and-planning-mvp-8593f604c685#.peble5lqn">blog.</a>');
+ }
   });
 </script>
 
