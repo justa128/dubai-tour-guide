@@ -28,6 +28,7 @@
     <link href="css/new-age.min.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -89,6 +90,7 @@
 <script type="text/javascript">var submitted=false;</script>
 <script type="text/javascript">
 $('#gform').on('submit', function(e) {
+  $('#gform').validate();
   $('#gform *').fadeOut(0);
   $('#gform').prepend('Thank you! I will notify you when the app is launched. Meanwhile kindly visit my <a href="https://medium.com/@justynagolawska/dubai-tour-guide-app-initial-concept-and-planning-mvp-8593f604c685#.peble5lqn">blog.</a>');
   });
