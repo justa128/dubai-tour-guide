@@ -84,16 +84,24 @@
                             <h1>Planning a trip to Dubai? Make sure you visit unique attractions recommended by the local people!</h1>
                             <form name="gform" id="gform" enctype="text/plain" style="font-size:19px;" action="https://docs.google.com/forms/d/e/1FAIpQLSfTk4Mq8oeLWZxzFqAvYy_ZoTqsO3yZT8w2ybOyztFdmplQ_g/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
   <input type="email" class="email-field" name="entry.232219261" type="email" required id="entry.232219261" placeholder="Your email address..."><br>
-  <input type="submit" value="Get Recommendations" class="btn btn-outline btn-xl">
+  <input type="submit" value="Get Recommendations" onClick="return empty()" class="btn btn-outline btn-xl">
 </form>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 <script type="text/javascript">var submitted=false;</script>
 <script type="text/javascript">
+if (screen && screen.width < 780) {
+function empty() {
+    var x;
+    x = document.getElementById("entry.232219261").value;
+    if (x == "") {
+        return false;
+    };
+} }
+</script>
+<script type="text/javascript">
 $('#gform').on('submit', function(e) {
- if(email != null) {
   $('#gform *').fadeOut(0);
   $('#gform').prepend('Thank you! I will notify you when the app is launched. Meanwhile kindly visit my <a href="https://medium.com/@justynagolawska/dubai-tour-guide-app-initial-concept-and-planning-mvp-8593f604c685#.peble5lqn">blog.</a>');
- }
   });
 </script>
 
