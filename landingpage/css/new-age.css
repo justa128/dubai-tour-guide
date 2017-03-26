@@ -506,17 +506,17 @@ input.formInvalid:focus {
 }
 
 input.formInvalid:focus::-webkit-input-placeholder {
-color: #757575 !important;
+color: #989898 !important;
 }
  
 input.formInvalid:focus:-moz-placeholder { /* Firefox 18- */
-color: #757575 !important;  
+color: #989898 !important;  
 }
  
 input.formInvalid:focus::-moz-placeholder {  /* Firefox 19+ */
-color: #757575 !important;  
+color: #989898 !important;  
 }
  
 input.formInvalid:focus:-ms-input-placeholder {  
-color: #757575 !important;  
+color: #989898 !important;  
 }
