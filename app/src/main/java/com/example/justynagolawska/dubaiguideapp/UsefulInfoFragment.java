@@ -1,11 +1,13 @@
 package com.example.justynagolawska.dubaiguideapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ public class UsefulInfoFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.category_list, container, false);
 
         // Create an ArrayList of Category objects
-        ArrayList<Category> categories = new ArrayList<Category>();
+        final ArrayList<Category> categories = new ArrayList<Category>();
         categories.add(new Category(getString(R.string.wheather), R.drawable.sunset));
         categories.add(new Category(getString(R.string.dress_code), R.drawable.dresscode));
         categories.add(new Category(getString(R.string.alcohol), R.drawable.alcohol_party_dark));
@@ -43,6 +45,27 @@ public class UsefulInfoFragment extends Fragment {
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(categoryAdapter);
+
+
+        //Set a click listener on that View
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
+
+                // Get the Category object at the given position the user clicked on
+                Category category = categories.get(position);
+
+                //Getting the answer to question 1
+                String title = category.getCategoryName();
+                // Getting
+                int imageResourceID = category.getImageResourceId();
+
+                Intent categoryDetail = new Intent(getActivity(), CategoryDeatailActivity.class);
+                categoryDetail.putExtra("categoryTitle", title);
+                categoryDetail.putExtra("imageResourceId", imageResourceID);
+                startActivity(categoryDetail);
+            }
+        });
 
         return rootView;
     }
