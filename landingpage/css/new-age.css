@@ -480,3 +480,43 @@ body {
    	color: #222222 !important;
    }
  }
+ .red-border {
+ 	border: 2px solid #ff0000;
+ 	color: red;
+ }
+input.formInvalid::-webkit-input-placeholder {
+color: red !important;
+}
+ 
+input.formInvalid:-moz-placeholder { /* Firefox 18- */
+color: red !important;  
+}
+ 
+input.formInvalid::-moz-placeholder {  /* Firefox 19+ */
+color: red !important;  
+}
+ 
+input.formInvalid:-ms-input-placeholder {  
+color: red !important;  
+}
+
+input.formInvalid:focus { 
+    color: #333333;
+    border: none;
+}
+
+input.formInvalid:focus::-webkit-input-placeholder {
+color: #333333 !important;
+}
+ 
+input.formInvalid:focus:-moz-placeholder { /* Firefox 18- */
+color: #333333 !important;  
+}
+ 
+input.formInvalid:focus::-moz-placeholder {  /* Firefox 19+ */
+color: #333333 !important;  
+}
+ 
+input.formInvalid:focus:-ms-input-placeholder {  
+color: #333333 !important;  
+}
