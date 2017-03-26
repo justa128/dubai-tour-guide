@@ -28,7 +28,7 @@
     <link href="css/new-age.min.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -74,6 +74,9 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    
+
+
 
     <header>
         <div class="container">
@@ -83,27 +86,42 @@
                         <div class="header-content-inner">
                             <h1>Planning a trip to Dubai? Make sure you visit unique attractions recommended by the local people!</h1>
                             <form name="gform" id="gform" enctype="text/plain" style="font-size:19px;" action="https://docs.google.com/forms/d/e/1FAIpQLSfTk4Mq8oeLWZxzFqAvYy_ZoTqsO3yZT8w2ybOyztFdmplQ_g/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
-  <input type="email" class="email-field" name="entry.232219261" type="email" required id="entry.232219261" placeholder="Your email address..."><br>
-  <input type="submit" value="Get Recommendations" onClick="return empty()" class="btn btn-outline btn-xl">
+  <input type="email" tabindex="-1" class="email-field" name="entry.232219261" required id="entry.232219261" placeholder="Your email address..." onfocus="myFunction()"><br>
+  <input type="submit" value="Get Recommendations"  id="validate" class="btn btn-outline btn-xl">
 </form>
+
+
+
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 <script type="text/javascript">var submitted=false;</script>
+
 <script type="text/javascript">
+function validateEmail(emailAddress) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(emailAddress);
+}
 if (screen && screen.width < 780) {
-function empty() {
-    var x;
-    x = document.getElementById("entry.232219261").value;
-    if (x == "") {
-        alert("Please enter a valid email address");
-        return false;
-    };
-} }
+function validate() {
+  var emailValue = document.getElementById("entry.232219261").value;
+  if (!validateEmail(emailValue)) {
+  	document.getElementById("entry.232219261").className += " red-border formInvalid";
+    alert("Please provide a valid email address");
+    document.getElementById("entry.232219261").removeAttribute("formInvalid")
+    
+    return false;
+  	}
+  }
+ }
+  
+$("#validate").bind("click", validate); 
+
 </script>
+
 <script type="text/javascript">
 $('#gform').on('submit', function(e) {
   $('#gform *').fadeOut(0);
   $('#gform').prepend('Thank you! I will notify you when the app is launched. Meanwhile kindly visit my <a href="https://medium.com/@justynagolawska/dubai-tour-guide-app-initial-concept-and-planning-mvp-8593f604c685#.peble5lqn">blog.</a>');
-  });
+  }); 
 </script>
 
                            
@@ -116,7 +134,7 @@ $('#gform').on('submit', function(e) {
                             <div class="device">
                                 <div class="screen">
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/Dubai-Tour-Guide1.jpg" class="img-responsive" alt="Dubai Tour Guide App">
+                                    <img src="img/Dubai-Tour-Guide.jpg" class="img-responsive" alt="Dubai Tour Guide App">
                                 </div>
                                 <div class="button">
                                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
