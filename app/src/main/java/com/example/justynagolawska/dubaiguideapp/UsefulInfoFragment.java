@@ -55,13 +55,15 @@ public class UsefulInfoFragment extends Fragment {
                 // Get the Category object at the given position the user clicked on
                 Category category = categories.get(position);
 
-                //Getting the answer to question 1
+                //Getting the category name
                 String title = category.getCategoryName();
-                // Getting
+                // Getting the image resource id for the category
                 int imageResourceID = category.getImageResourceId();
 
                 Intent categoryDetail = new Intent(getActivity(), CategoryDeatailActivity.class);
+                //Passing the category title to the CategoryDetailActivity
                 categoryDetail.putExtra("categoryTitle", title);
+                //Passing the image id to the CategoryDetailActivity
                 categoryDetail.putExtra("imageResourceId", imageResourceID);
                 startActivity(categoryDetail);
             }

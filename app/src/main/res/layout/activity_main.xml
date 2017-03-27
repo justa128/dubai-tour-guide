@@ -12,6 +12,16 @@
     android:orientation="vertical"
     tools:context="com.example.justynagolawska.dubaiguideapp.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:background="#000000"
+        android:padding="14dp"
+        android:textSize="20sp"/>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
