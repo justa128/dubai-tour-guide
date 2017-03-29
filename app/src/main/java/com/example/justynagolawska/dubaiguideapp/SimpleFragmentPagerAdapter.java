@@ -21,6 +21,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    // This determines the fragment for each tab
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
@@ -34,11 +35,13 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
+    // This determines the number of tabs
     @Override
     public int getCount() {
         return 4;
     }
 
+    // This determines the title for each tab
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
