@@ -1,12 +1,15 @@
 package com.example.justynagolawska.dubaiguideapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.maps.GoogleMap;
 
 import java.util.ArrayList;
 
@@ -20,6 +23,9 @@ import java.util.ArrayList;
 * based on a data source, which is a list of {@link Category} objects.
 * */
 public class CategoryAdapter extends ArrayAdapter<Category> {
+
+    private Context mContext;
+    private GoogleMap mMap;
 
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
@@ -61,7 +67,7 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
         // Find the TextView in the category_list_item.xml layout with the ID category_name
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.category_name);
         // Get the category name from the current Category object and
-        // set this text on the name TextView
+        // set this text on the nameTextView
         nameTextView.setText(currentCategory.getCategoryName());
 
         // Find the ImageView in the category_list_item.xml layout with the ID category_image

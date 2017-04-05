@@ -52,4 +52,16 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
+    <style name="Buttons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">#F1F1F1</item>
+        <item name="android:textColor">#554F4B</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>

@@ -30,12 +30,18 @@ public class UsefulInfoFragment extends Fragment {
 
         // Create an ArrayList of Category objects
         final ArrayList<Category> categories = new ArrayList<Category>();
-        categories.add(new Category(getString(R.string.wheather), R.drawable.sunset));
-        categories.add(new Category(getString(R.string.dress_code), R.drawable.dresscode));
-        categories.add(new Category(getString(R.string.alcohol), R.drawable.alcohol_party_dark));
-        categories.add(new Category(getString(R.string.ramadan), R.drawable.dubai_at_night));
-        categories.add(new Category(getString(R.string.alcohol), R.drawable.dubai_at_night));
-        categories.add(new Category(getString(R.string.prices), R.drawable.dubai_at_night));
+        categories.add(new Category(getString(R.string.wheather), R.drawable.sunset, getString(R.string.first_p),
+                25.093163, 55.159065, getString(R.string.map_location_title)));
+        categories.add(new Category(getString(R.string.dress_code), R.drawable.dresscode, getString(R.string.first_p),
+                52.248346, 21.015270, getString(R.string.map_location_title2)));
+        categories.add(new Category(getString(R.string.alcohol), R.drawable.alcohol_party_dark, getString(R.string.first_p),
+                25.093163, 55.159065, getString(R.string.map_location_title)));
+        categories.add(new Category(getString(R.string.ramadan), R.drawable.dubai_at_night, getString(R.string.first_p),
+                52.248346, 21.015270, getString(R.string.map_location_title2)));
+        categories.add(new Category(getString(R.string.alcohol), R.drawable.dubai_at_night, getString(R.string.first_p),
+                25.093163, 55.159065, getString(R.string.map_location_title)));
+        categories.add(new Category(getString(R.string.prices), R.drawable.dubai_at_night, getString(R.string.first_p),
+                52.248346, 21.015270, getString(R.string.map_location_title2)));
 
         // Create an {@link CategoryAdapter}, whose data source is a list of
         // {@link Categories}. The adapter knows how to create list item views for each item
@@ -59,12 +65,29 @@ public class UsefulInfoFragment extends Fragment {
                 String title = category.getCategoryName();
                 // Getting the image resource id for the category
                 int imageResourceID = category.getImageResourceId();
+                // Getting the first paragraph text
+                String firstParagraph = category.getFirstParagraph();
+                // Getting the longitude
+                Double longitude = category.getLongitude();
+                // Getting the latitude
+                Double latitude = category.getLatitude();
+                // Getting the map location title
+                String locationTitle = category.getLocationTitle();
 
                 Intent categoryDetail = new Intent(getActivity(), CategoryDeatailActivity.class);
                 //Passing the category title to the CategoryDetailActivity
                 categoryDetail.putExtra("categoryTitle", title);
                 //Passing the image id to the CategoryDetailActivity
                 categoryDetail.putExtra("imageResourceId", imageResourceID);
+                //Passing the first paragraph text to the CategoryDetailActivity
+                categoryDetail.putExtra("firstParagraphText", firstParagraph);
+                //Passing the longitude google coordinate to the CategoryDetailActivity
+                categoryDetail.putExtra("longitude", longitude);
+                //Passing the latitude google coordinate to the CategoryDetailActivity
+                categoryDetail.putExtra("latitude", latitude);
+                //Passing the map location title to the CategoryDetailActivity
+                categoryDetail.putExtra("locationTitle", locationTitle);
+
                 startActivity(categoryDetail);
             }
         });
